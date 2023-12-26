@@ -5,8 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './hologram.component.html',
-  styleUrl: './hologram.component.scss'
 })
 export class HologramComponent {
-
+  public apiLoaded = false;
 }

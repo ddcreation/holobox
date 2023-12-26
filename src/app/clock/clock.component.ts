@@ -7,6 +7,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
   imports: [CommonModule],
   templateUrl: './clock.component.html',
   styleUrl: './clock.component.scss',
+  host: {
+    class: 'my-auto px-5',
+  },
 })
 export class ClockComponent implements OnInit, OnDestroy {
   public timer: Date = new Date();
