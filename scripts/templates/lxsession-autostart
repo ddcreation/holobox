@@ -2,5 +2,4 @@
 @pcmanfm --desktop --profile LXDE-pi
 @xset -dpms
 @xset s off
-@xscreensaver -no-splash
 @sh ~/holobox/scripts/launch.sh
