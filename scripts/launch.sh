@@ -11,7 +11,7 @@ echo "Checking for updates..."
 git fetch origin
 reslog=$(git log HEAD..origin/master --oneline)
 if [[ "${reslog}" != "" ]] ; then
-  bash update.sh
+  bash scripts/update.sh
   echo "Relaunching browser..."
   . scripts/chromium.sh &
 else
