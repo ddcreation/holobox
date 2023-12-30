@@ -9,7 +9,7 @@ cd ../;
 git fetch origin
 reslog=$(git log HEAD..origin/master --oneline)
 if [[ "${reslog}" != "" ]] ; then
-  git reset --hard origin/master
+  git pull origin
   cp scripts/templates/lxsession-autostart ~/.config/lxsession/LXDE-pi/autostart
   npm install
   ng build --configuration="production"
