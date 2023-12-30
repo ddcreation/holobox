@@ -17,7 +17,7 @@ if [[ "${reslog}" != "" ]] ; then
 
   cp -R dist/holobox/browser/* /var/www/html/;
 
-  . chromium.sh
+  . scripts/chromium.sh
 fi
 
 exit 0
