@@ -17,6 +17,5 @@ sudo apt install lighttpd
 ###################################
 # Auto launch at login
 ###################################
-ln -s ~/holobox/scripts/templates/lxsession/lxsession-autostart ~/.config/lxsession/LXDE-pi/
-ln -s ~/holobox/scripts/launch.sh ~/.config/lxsession/LXDE-pi/
+cp ~/holobox/scripts/templates/lxsession/lxsession-autostart ~/.config/lxsession/LXDE-pi/autostart
 ###################################
