@@ -17,6 +17,5 @@ sudo apt install lighttpd
 ###################################
 # Auto launch at login
 ###################################
-cp templates/autostart ~/.config/lxsession/LXDE-pi/
-chmod 755 ~/.config/lxsession/LXDE-pi/autostart
+ln -s scripts/templates/autostart ~/.config/lxsession/LXDE-pi/
 ###################################

@@ -1,11 +1,19 @@
 #!/bin/bash
 
+# Launch Chromium
+. chromium.sh
+
 cd ../;
-git pull origin;
 
-npm install;
-ng build --configuration="production";
+# Check if needs update
+git fetch origin
+reslog=$(git log HEAD..origin/master --oneline)
+if [[ "${reslog}" != "" ]] ; then
+  git reset --hard origin/master
+  npm install
+  ng build --configuration="production"
 
-cp -R dist/holobox/browser/* /var/www/html/
+  cp -R dist/holobox/browser/* /var/www/html/
 
-chromium-browser http://localhost/ http://localhost/clock http://localhost/hologram --kiosk --noerrdialogs --disable-infobars --no-first-run --enable-features=OverlayScrollbar --start-maximized
+  . chromium.sh
+
