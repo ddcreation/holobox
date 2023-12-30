@@ -1,0 +1,6 @@
+@lxpanel --profile LXDE-pi
+@pcmanfm --desktop --profile LXDE-pi
+@xset -dpms
+@xset s off
+point-rpi
+@sh ~/holobox/scripts/launch.sh
