@@ -11,7 +11,7 @@ sudo apt install xdotool
 
 # LightHTTP
 sudo apt remove apache2
-sudo apt install lighttpd
+sudo apt install nginx
 ###################################
 
 ###################################

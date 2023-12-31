@@ -4,7 +4,7 @@ HOLOBOX_PATH=$(dirname $0)/../
 cd $HOLOBOX_PATH;
 # Launch Chromium
 echo "Launch chromium script."
-. scripts/chromium.sh &
+. scripts/chromium.sh
 
 # Check if needs update
 echo "Checking for updates..."
@@ -13,7 +13,7 @@ reslog=$(git log HEAD..origin/master --oneline)
 if [[ "${reslog}" != "" ]] ; then
   bash scripts/update.sh
   echo "Relaunching browser..."
-  . scripts/chromium.sh &
+  . scripts/chromium.sh
 else
   echo "No Updates"
 fi
