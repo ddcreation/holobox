@@ -44,6 +44,7 @@
                   "maximumError": "4kb"
                 }
               ],
+              "styles": ["src/styles.scss", "src/scss/mirror.scss"],
               "outputHashing": "all"
             },
             "development": {
