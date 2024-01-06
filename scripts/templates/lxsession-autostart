@@ -2,4 +2,4 @@
 #@pcmanfm --desktop --profile LXDE-pi
 @xset -dpms
 @xset s off
-@holobox-launch
+@bash /home/david/holobox/scripts/launch.sh
