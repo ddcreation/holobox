@@ -11,7 +11,7 @@ cd $HOLOBOX_PATH;
 
 # GPIOs listeners
 echo "Stopping GPIO listeners if any"
-killall gpio.py
+pkill -9 -f gpio.py
 echo "Launching GPIO listeners script"
 python3 scripts/gpio.py &
 
