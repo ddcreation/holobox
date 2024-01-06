@@ -1,6 +1,12 @@
 #!/bin/bash
-
 HOLOBOX_PATH=$(dirname $0)/../
+
+# Log output
+LOGFILE="${HOLOBOX_PATH}log/update.log"
+touch $LOGFILE
+exec > >(tee -i $LOGFILE)
+exec 2>&1
+
 cd $HOLOBOX_PATH;
 
 echo "Downloading updates..."
