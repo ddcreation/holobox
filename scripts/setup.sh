@@ -19,3 +19,9 @@ sudo apt install nginx
 ###################################
 cp ~/holobox/scripts/templates/lxsession/lxsession-autostart ~/.config/lxsession/LXDE-pi/autostart
 ###################################
+
+###################################
+# Scripts
+###################################
+sudo ln -s ~/holobox/scripts/switchtab.sh /usr/bin/switchtab
+
