@@ -4,7 +4,7 @@ HOLOBOX_PATH=$(dirname $0)/../
 cd $HOLOBOX_PATH;
 
 # GPIOs listeners
-python3 gpio.py &
+python3 scripts/gpio.py &
 
 # Launch Chromium
 echo "Launch chromium script."
