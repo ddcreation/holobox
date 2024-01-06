@@ -9,19 +9,17 @@ sudo apt upgrade
 # Keyboard simulator
 sudo apt install xdotool
 
-# LightHTTP
+# HTTP server
 sudo apt remove apache2
 sudo apt install nginx
 ###################################
 
 ###################################
-# Auto launch at login
+# Links to scripts
 ###################################
-cp ~/holobox/scripts/templates/lxsession/lxsession-autostart ~/.config/lxsession/LXDE-pi/autostart
-###################################
-
-###################################
-# Scripts
-###################################
+# Autolauncher
+ln -s ~/holobox/scripts/templates/lxsession/lxsession-autostart ~/.config/lxsession/LXDE-pi/autostart
+# Bin
+sudo ln -s ~/holobox/scripts/launch.sh /usr/bin/holobox-launch
 sudo ln -s ~/holobox/scripts/switchtab.sh /usr/bin/switchtab
 
