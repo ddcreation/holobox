@@ -4,9 +4,7 @@ HOLOBOX_PATH=$(dirname $0)/../
 cd $HOLOBOX_PATH;
 
 echo "Downloading updates..."
-git pull origin;
-echo "Setting up files changes!"
-chmod 755 -R scripts;
+git reset --hard origin/master
 echo "Installing..."
 npm install;
 echo "Building new package..."
