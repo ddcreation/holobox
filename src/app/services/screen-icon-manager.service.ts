@@ -1,18 +1,19 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ScreenIconManagerService {
-  private _icon = 'arrow-clockwise';
+  private _icon$ = new BehaviorSubject<string | null>(null);
 
   constructor() {}
 
-  public getIcon(): string {
-    return this._icon;
+  public subscribeIcon(): Observable<string | null> {
+    return this._icon$.asObservable();
   }
 
   public setIcon(icon: string): void {
-    this._icon = icon;
+    this._icon$.next(icon);
   }
 }
