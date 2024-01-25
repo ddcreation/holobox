@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { HoloboxPage } from '../../models/holobox-page/holobox-page.component';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-clock',
@@ -12,16 +11,15 @@ import { HoloboxPage } from '../../models/holobox-page/holobox-page.component';
     class: 'my-auto px-5',
   },
 })
-export class ClockComponent extends HoloboxPage {
-  protected icon = 'clock';
+export class ClockComponent implements OnInit, OnDestroy {
   public timer: Date = new Date();
   private _timerFn: any;
 
-  public override holopageInit(): void {
+  public ngOnInit(): void {
     this._timerFn = setInterval(() => (this.timer = new Date()), 1000);
   }
 
-  public override holopageDestroy(): void {
+  public ngOnDestroy(): void {
     clearInterval(this._timerFn);
   }
 }

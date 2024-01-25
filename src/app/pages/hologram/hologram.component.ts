@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { HoloboxPage } from '../../models/holobox-page/holobox-page.component';
 
 @Component({
   selector: 'app-hologram',
@@ -7,7 +6,6 @@ import { HoloboxPage } from '../../models/holobox-page/holobox-page.component';
   imports: [],
   templateUrl: './hologram.component.html',
 })
-export class HologramComponent extends HoloboxPage {
+export class HologramComponent {
   public apiLoaded = false;
-  protected icon = 'play-btn-fill';
 }
