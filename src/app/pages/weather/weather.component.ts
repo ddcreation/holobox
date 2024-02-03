@@ -1,8 +1,10 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, LOCALE_ID, OnDestroy, OnInit } from '@angular/core';
 import { WeatherService } from './services/weather.service';
-import { Subscription } from 'rxjs';
+import { BehaviorSubject, Subscription } from 'rxjs';
 import { CommonModule } from '@angular/common';
-import { WeatherDTO } from './services/weather.interface';
+import { WeatherDTO, WeatherResponse } from './services/weather.interface';
+import { DateService } from '../../services/date.service';
+import { WeatherIconComponent } from '../../components/weather-icon/weather-icon.component';
 
 @Component({
   selector: 'app-weather',
@@ -12,15 +14,21 @@ import { WeatherDTO } from './services/weather.interface';
   host: {
     class: 'my-auto px-5',
   },
-  imports: [CommonModule],
-  providers: [WeatherService],
+  imports: [CommonModule, WeatherIconComponent],
+  providers: [WeatherService, DateService],
 })
 export class WeatherComponent implements OnInit, OnDestroy {
-  public weatherDatas: WeatherDTO | null = null;
+  public currentDate: BehaviorSubject<Date>;
+  public weatherDatas: WeatherResponse | null = null;
 
   private _subscriptions = new Subscription();
 
-  constructor(private _weatherService: WeatherService) {}
+  constructor(
+    private _weatherService: WeatherService,
+    private _dateService: DateService
+  ) {
+    this.currentDate = this._dateService.currentDate$;
+  }
 
   public ngOnInit(): void {
     this._subscriptions.add(this._forecast());
@@ -30,9 +38,13 @@ export class WeatherComponent implements OnInit, OnDestroy {
     this._subscriptions.unsubscribe();
   }
 
+  public get today(): WeatherDTO | null {
+    return this.weatherDatas?.days[0] || null;
+  }
+
   private _forecast() {
-    return this._weatherService.forecast$().subscribe((forecast) => {
-      this.weatherDatas = forecast;
-    });
+    return this._weatherService
+      .forecast$()
+      .subscribe((forecast) => (this.weatherDatas = forecast));
   }
 }

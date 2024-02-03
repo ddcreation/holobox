@@ -1,0 +1,24 @@
+:host {
+  font-size: 1rem;
+}
+
+.date {
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+.conditions {
+  font-size: 1.2rem;
+}
+
+.today {
+  .weather-icon hb-weather-icon {
+    min-width: 100%;
+    min-height: 5rem;
+  }
+}
+
+.min-max h6 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}

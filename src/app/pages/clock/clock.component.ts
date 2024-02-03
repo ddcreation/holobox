@@ -1,25 +1,23 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { DateService } from '../../services/date.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-clock',
   standalone: true,
   imports: [CommonModule],
+  providers: [DateService],
   templateUrl: './clock.component.html',
   styleUrl: './clock.component.scss',
   host: {
     class: 'my-auto px-5',
   },
 })
-export class ClockComponent implements OnInit, OnDestroy {
-  public timer: Date = new Date();
-  private _timerFn: any;
+export class ClockComponent {
+  public timer: BehaviorSubject<Date>;
 
-  public ngOnInit(): void {
-    this._timerFn = setInterval(() => (this.timer = new Date()), 1000);
-  }
-
-  public ngOnDestroy(): void {
-    clearInterval(this._timerFn);
+  constructor(private _dateService: DateService) {
+    this.timer = this._dateService.currentDate$;
   }
 }

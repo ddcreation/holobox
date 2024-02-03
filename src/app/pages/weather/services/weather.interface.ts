@@ -1,6 +1,6 @@
 export interface WeatherResponse {
   description: string;
-  days: [];
+  days: WeatherDTO[];
   alerts: {
     event: string;
     description: string;
@@ -12,6 +12,7 @@ export interface WeatherDTO {
   datetime: string;
   temp: number;
   feelslike: number;
+  icon: string;
   hours: {
     datetime: string;
   }[];

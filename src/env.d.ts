@@ -12,6 +12,7 @@ interface ImportMetaEnv {
   // readonly NG_APP_API_URL: string;
   readonly HB_LOCALE_ID: 'en-US' | 'fr-FR';
   readonly HB_LOCATION: string;
+  readonly HB_UNIT_GROUP: 'us' | 'metric';
   readonly HB_WEATHER_API_KEY: string;
   [key: string]: any;
 }
