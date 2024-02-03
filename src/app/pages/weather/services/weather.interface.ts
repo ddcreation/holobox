@@ -11,7 +11,11 @@ export interface WeatherResponse {
 export interface WeatherDTO {
   datetime: string;
   temp: number;
+  tempmin: number;
+  tempmax: number;
   feelslike: number;
+  feelslikemin: number;
+  feelslikemax: number;
   icon: string;
   hours: {
     datetime: string;

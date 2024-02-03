@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
     <div class="date">{{ currentDate | async | date : "fullDate" }}</div>
-    <div class="conditions text-body-secondary">
+    <div *ngIf="weatherDatas" class="conditions text-body-secondary">
       {{ weatherDatas.description }}
     </div>
   </div>
-  <div class="row">
-    <div class="today col-4 pt-4">
+  <div class="row" *ngIf="weatherDatas">
+    <div *ngIf="today" class="today col-4 pt-4">
       <h2 class="temperature display-1 text-center">
         {{ today.temp }}
       </h2>
