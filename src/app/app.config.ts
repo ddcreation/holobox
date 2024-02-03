@@ -4,5 +4,8 @@ import { provideRouter } from '@angular/router';
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), { provide: LOCALE_ID, useValue: 'fr-FR' }],
+  providers: [
+    provideRouter(routes),
+    { provide: LOCALE_ID, useValue: import.meta.env.HB_LOCALE_ID },
+  ],
 };
