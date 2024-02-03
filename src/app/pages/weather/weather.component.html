@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="date">{{ currentDate | async | date : "fullDate" }}</div>
+    <div class="conditions text-body-secondary">
+      {{ weatherDatas.description }}
+    </div>
+  </div>
+  <div class="row">
+    <div class="today col-4 pt-4">
+      <h2 class="temperature display-1 text-center">
+        {{ today.temp }}
+      </h2>
+      <div class="weather-icon">
+        <hb-weather-icon [weather]="today" size="xl" />
+      </div>
+      <div class="min-max pt-4 d-flex flex-row justify-content-between">
+        <h6>
+          {{ today.tempmin }}
+          <small class="text-body-secondary">({{ today.feelslikemin }})</small>
+        </h6>
+        <h6>
+          {{ today.tempmax }}
+          <small class="text-body-secondary">({{ today.feelslikemax }})</small>
+        </h6>
+      </div>
+    </div>
+    <div class="forecast col-8 pt-1">
+      <table class="table align-middle">
+        <thead></thead>
+        <tbody>
+          <tr *ngFor="let day of weatherDatas.days">
+            <td>{{ day.datetime }}</td>
+            <td><hb-weather-icon [weather]="day" /></td>
+            <td>
+              {{ day.tempmin }}
+              <small class="text-body-secondary"
+                >({{ day.feelslikemin }})</small
+              >
+            </td>
+            <td>
+              {{ day.tempmax }}
+              <small class="text-body-secondary"
+                >({{ day.feelslikemax }})</small
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
