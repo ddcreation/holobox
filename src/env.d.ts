@@ -10,6 +10,8 @@ interface ImportMetaEnv {
   readonly NODE_ENV: string;
   // Add your environment variables below
   // readonly NG_APP_API_URL: string;
+  readonly HB_WEATHER_API_KEY: string;
+  readonly HB_LOCATION: string;
   [key: string]: any;
 }
 
