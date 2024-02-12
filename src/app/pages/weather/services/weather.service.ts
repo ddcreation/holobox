@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { WeatherDTO, WeatherResponse } from './weather.interface';
-import { Observable, map, of } from 'rxjs';
+import { WeatherResponse } from './weather.interface';
+import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import weatherResponse from './example.json';
 
 @Injectable({
   providedIn: 'root',
@@ -18,8 +17,7 @@ export class WeatherService {
 
   forecast$(): Observable<WeatherResponse> {
     const current = new Date().toISOString().substring(0, 10);
-    // temp mock:
-    return of(weatherResponse as any as WeatherResponse);
+
     return this._http.get<WeatherResponse>(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${this._location}/${current}/next${this._forecastNumber}days?include=fcst%2Cobs%2Chistfcst%2Cstats%2Cdays%2Chours%2Ccurrent%2Calerts&key=${this._apiKey}&options=beta&contentType=json&unitGroup=${this._metrics}&lang=${this._lang}&iconSet=icons2`
     );
