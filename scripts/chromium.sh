@@ -12,6 +12,6 @@ killall chromium-browser
 
 echo "Launching chromium"
 export DISPLAY=:0.0
-chromium-browser http://localhost/ http://localhost/clock http://localhost/weather http://localhost/hologram --kiosk --noerrdialogs --disable-infobars --no-first-run --enable-features=OverlayScrollbar --start-maximized --disable-extensions
+chromium-browser http://localhost/ http://localhost/clock http://localhost/weather http://localhost/hologram --kiosk --noerrdialogs --disable-infobars --no-first-run --enable-features=OverlayScrollbar --start-maximized --disable-extensions --incognito
 
 exit 0
