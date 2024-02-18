@@ -10,6 +10,7 @@ interface ImportMetaEnv {
   readonly NODE_ENV: string;
   // Add your environment variables below
   // readonly NG_APP_API_URL: string;
+  readonly HB_MIRROR_MODE: '' | 'mirror-x' | 'mirror-y' | 'mirror-xy';
   readonly HB_LOCALE_ID: 'en-US' | 'fr-FR';
   readonly HB_LOCATION: string;
   readonly HB_UNIT_GROUP: 'us' | 'metric';

@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": ["src/assets"],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/styles.scss", "src/scss/mirror.scss"],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
@@ -47,7 +47,6 @@
                   "maximumError": "4kb"
                 }
               ],
-              "styles": ["src/styles.scss", "src/scss/mirror.scss"],
               "outputHashing": "all"
             },
             "development": {
