@@ -18,6 +18,7 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnDestroy {
+  public readonly mirror_mode = import.meta.env.HB_MIRROR_MODE;
   public icon: string = '';
   private _router$ = new Subscription();
 
